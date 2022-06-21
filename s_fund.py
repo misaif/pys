@@ -33,9 +33,8 @@ def get_holiday():
 
 def get_fund():
     fund_code = os.getenv('FUND_CODE')
-    print(fund_code)
     result = ''
-    for fund in json.loads(fund_code):
+    for fund in fund_code.split(','):
         millis = int(round(time.time() * 1000))
         url = 'https://fundgz.1234567.com.cn/js/%s.js?rt=%d' % (fund, millis)
         resp = requests.get(url, headers=headers).text
@@ -58,20 +57,6 @@ def get_fund():
     return result
 
 
-def send_push_plus(title, content):
-    token = os.getenv('PUSH_PLUS_TOKEN')
-    data = {
-        "token": token,
-        "title": title,
-        "content": content
-    }
-    url = 'https://www.pushplus.plus/send'
-    body = json.dumps(data).encode(encoding='utf-8')
-    plusHeaders = {'Content-Type': 'application/json'}
-    requests.post(url, data=body, headers=plusHeaders)
-    pass
-
-
 def random_sleep(mu=1, sigma=0.4):
     secs = random.normalvariate(mu, sigma)
     if secs <= 0:
@@ -82,9 +67,7 @@ def random_sleep(mu=1, sigma=0.4):
 def start():
     if get_holiday():
         content = get_fund()
-        print(content)
-        send_push_plus('行情', content)
-        send('行情1', content)
+        send('行情', content)
     pass
 
 
