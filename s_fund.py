@@ -12,6 +12,8 @@ import time
 
 import requests as requests
 
+from notify import send
+
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
 }
@@ -82,7 +84,7 @@ def start():
         content = get_fund()
         print(content)
         send_push_plus('行情', content)
-        pushplus_bot('行情1', content)
+        send('行情1', content)
     pass
 
 
