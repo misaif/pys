@@ -31,6 +31,7 @@ def get_holiday():
 
 def get_fund():
     fund_code = os.getenv('FUND_CODE')
+    print(fund_code)
     result = ''
     for fund in json.loads(fund_code):
         millis = int(round(time.time() * 1000))
