@@ -82,6 +82,7 @@ def start():
         content = get_fund()
         print(content)
         send_push_plus('行情', content)
+        pushplus_bot('行情', content)
     pass
 
 
