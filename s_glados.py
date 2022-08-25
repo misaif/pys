@@ -1,3 +1,11 @@
+# -*- coding:utf-8 -*-
+# 需要设置环境变量：GLADOS_COOKIE（GLaDOS Cookie），多个用 & 分割
+
+"""
+cron: 17 7 * * *
+new Env('GLaDOS Checkin');
+"""
+
 import json
 import os
 import random
