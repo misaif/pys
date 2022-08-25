@@ -22,6 +22,7 @@ def checkin():
     count = 0
     message = ''
     if cookies is None:
+        print('请设置环境变量：GLADOS_COOKIE')
         return
     for cookie in cookies.split('&'):
         count += 1
