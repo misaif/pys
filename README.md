@@ -13,5 +13,5 @@
 ## 使用
 
 `
-ql repo https://github.com/misaif/pys.git "s_"
+ql repo https://github.com/misaif/pys.git '.py' '' '' 'main'
 `
