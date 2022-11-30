@@ -48,11 +48,10 @@ def get_fund():
         gszzl = data['gszzl']
         # 估值时间
         gztime = data['gztime']
-        color = 'red'
+        stat = '&uarr;'
         if float(gszzl) < 0:
-            color = 'green'
-        fontColor = '<font color=\"%s\">%s</font>' % (color, gszzl)
-        noticeData = '%s（%s），涨跌幅：%s（%s）；\n' % (name, fundcode, fontColor, gztime)
+            stat = '&darr;'
+        noticeData = '%s (%s)\n涨跌幅: %s %s (%s)\n\n' % (name, fundcode, gszzl, stat, gztime)
         result += noticeData
         random_sleep()
     return result
