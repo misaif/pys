@@ -48,9 +48,9 @@ def get_fund():
         gszzl = data['gszzl']
         # 估值时间
         gztime = data['gztime']
-        stat = '&uarr;'
+        stat = '📈'
         if float(gszzl) < 0:
-            stat = '&darr;'
+            stat = '📉'
         noticeData = '%s (%s)\n涨跌幅: %s %s (%s)\n\n' % (name, fundcode, gszzl, stat, gztime)
         result += noticeData
         random_sleep()
