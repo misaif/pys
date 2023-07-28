@@ -27,7 +27,7 @@ def checkin():
     for cookie in cookies.split('&'):
         count += 1
         url = 'https://glados.rocks/api/user/checkin'
-        payload = {'token': 'glados.network'}
+        payload = {'token': 'glados.one'}
         headers = {'cookie': cookie, 'user-agent': user_agent, 'content-type': 'application/json;charset=UTF-8'}
         data = requests.post(url, headers=headers, data=json.dumps(payload))
         code = data.json()['code']
