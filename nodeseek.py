@@ -20,9 +20,8 @@ headers = {
 
 def nodeseek():
     url = 'https://www.nodeseek.com/api/attendance?random=true'
-    res = requests.post(url, headers=headers).json()
-    message = res['message']
-    send('NodeSeek Checkin', message)
+    res = requests.post(url, headers=headers)
+    send('NodeSeek Checkin', res)
 
 
 if __name__ == '__main__':
