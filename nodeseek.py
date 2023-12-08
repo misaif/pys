@@ -1,3 +1,11 @@
+# -*- coding:utf-8 -*-
+# 需要设置环境变量：NODESEEK_COOKIE，只需要 NodeSeek 的 session。
+
+"""
+cron: 23 8 * * *
+new Env('NodeSeek Checkin');
+"""
+
 import os
 
 import requests
