@@ -19,6 +19,7 @@ headers = {
 
 
 def nodeseek():
+    print(headers)
     url = 'https://www.nodeseek.com/api/attendance?random=true'
     res = requests.post(url, headers=headers)
     print(res)
