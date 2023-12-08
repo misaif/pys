@@ -19,8 +19,8 @@ headers = {
 
 
 def attendance():
-    url = 'https://www.nodeseek.com/api/attendance?random=true'
-    res = requests.post(url, headers=headers).json()
+    url = 'https://www.nodeseek.com/api/attendance?random=false'
+    res = requests.post(url, headers=headers, verify=False).json()
     message = res['message']
     send('NodeSeek Checkin', message)
 
