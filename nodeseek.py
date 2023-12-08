@@ -18,7 +18,7 @@ headers = {
 }
 
 
-def attendance():
+def nodeseek():
     url = 'https://www.nodeseek.com/api/attendance?random=true'
     res = requests.post(url, headers=headers).json()
     message = res['message']
@@ -26,4 +26,4 @@ def attendance():
 
 
 if __name__ == '__main__':
-    attendance()
+    nodeseek()
